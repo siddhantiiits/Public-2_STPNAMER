@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:the_master_app/func.dart';
 import 'browsers.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -16,17 +15,8 @@ class Building {
 
 checkID(int val) {
 
-//  if (val == 11)
-//    return photoEdit();
-//  else if(val==3)
-//    return wallets();
-//  else if(val==1)
-//    return social();
    if(val==4)
     return browsers();
-//  else if(val==6)
-//    return travelApps();
-//  else
     return false;
 }
 
@@ -34,14 +24,6 @@ class CardPage extends StatelessWidget {
   final Building building;
   CardPage({this.building});
   Widget build(context) {
-//    if (building.id == 10)
-//      return travelApps();
-//    else if (building.id == 11)
-//      return photoEdit();
-//    else if (building.id == 3)
-//      return wallets();
-//    else if (building.id == 1)
-//      return social();
     if (building.id == 4)
       return browsers();
 //    else if (building.id == 6)
@@ -117,132 +99,7 @@ class _SearchListState extends State<SearchList> {
       Building(
           id: 1, name: "Social", place: "Social", icon: FontAwesomeIcons.users),
     );
-    _list.add(
-      Building(
-        id: 2,
-        name: "Messengers",
-        place: "message text video call chat",
-        icon: FontAwesomeIcons.comments,
-      ),
-    );
-    _list.add(
-      Building(
-          id: 3,
-          name: "Wallets",
-          place: "Money transfer payment bill electricity recharge pay cash",
-          icon: FontAwesomeIcons.rupeeSign),
-    );
-    _list.add(
-      Building(
-          id: 4,
-          name: "Browsers",
-          place: "internet search google surfing private incognito",
-          icon: FontAwesomeIcons.globeAsia),
-    );
-    _list.add(
-      Building(
-          id: 5,
-          name: "Food",
-          place:
-              "Zomato, Swiggy, drink tasty hungry yum yummy chicken paneer mushroom taste",
-          icon: FontAwesomeIcons.pizzaSlice),
-    );
-    _list.add(
-      Building(
-          id: 6,
-          name: "Local Travel",
-          place: "ola uber car bike auto taxi nearby ",
-          icon: FontAwesomeIcons.car),
-    );
-    _list.add(
-      Building(
-          id: 7,
-          name: "Movies and Series",
-          place: "movie movies series tv video ",
-          icon: FontAwesomeIcons.play),
-    );
-    _list.add(
-      Building(
-          id: 8,
-          name: "Music",
-          place: "songs music sound voice youtube spotify wynk",
-          icon: FontAwesomeIcons.headphones),
-    );
-    _list.add(
-      Building(
-          id: 9,
-          name: "  Online\nShopping",
-          place:
-              "", //name all type of clothes present, watches, books names of sites etc //** LOL (pehli baar ache kaam k liye comment dekha)
-          icon: FontAwesomeIcons.shoppingCart),
-    );
-    _list.add(
-      Building(
-          id: 10,
-          name: "Travelling and Hotels",
-          place:
-              "stay resort hotel travel train flight bus taxi car room suite hospitality",
-          icon: FontAwesomeIcons.umbrellaBeach),
-    );
-    _list.add(
-      Building(
-          id: 11,
-          name: "Photo Editing",
-          place:
-              "crop photo pic pics pictures edit bright contrast filters frame collage ",
-          icon: FontAwesomeIcons.cameraRetro), //or use photo_filter
-    );
-    _list.add(
-      Building(
-          id: 12,
-          name: "Video Editing",
-          place: " transition animation video edit editting ",
-          icon: FontAwesomeIcons.icons),
-    );
-    _list.add(
-      Building(
-          id: 13,
-          name: "Writing and Reading",
-          place: "poem article novel snippets story breakup",
-          icon: FontAwesomeIcons.featherAlt),
-    );
-    _list.add(
-      Building(
-          id: 14,
-          name: "Health and Fitness",
-          place: "health fitness exercise water ",
-          icon: FontAwesomeIcons.heartbeat),
-    );
-    _list.add(
-      Building(
-          id: 15,
-          name: "Education and Learning",
-          place: "health fitness exercise water ",
-          icon: FontAwesomeIcons.bookReader),
-    );
-    _list.add(
-      Building(
-          id: 16,
-          name: "Government Services",
-          place: "PAN passport Licence  ",
-          icon: FontAwesomeIcons.heartbeat),
-    );
-    _list.add(
-      Building(
-          id: 17,
-          name: "Dating",
-          place:
-              "love sex hookup hug kiss friend girlfriend boyfriend boy girl man women heart date dating coffee  ",
-          icon: FontAwesomeIcons.kissWinkHeart),
-    );
-    _list.add(
-      Building(
-          id: 18,
-          name: "Games",
-          place: "play fun game arcade adventure  ",
-          icon: FontAwesomeIcons
-              .gamepad), //counselling and depression, finance and trading
-    );
+    
     _searchList = _list;
   }
 
@@ -269,14 +126,7 @@ class _SearchListState extends State<SearchList> {
             crossAxisCount: 3,
           )
 
-          /* GridView.count(
-        crossAxisCount: 3,
-        padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-        childAspectRatio: 8.0 / 9.0,
-        children: _IsSearching ? _buildSearchList() : _buildList(),
-      ),*/
-          //drawer: Navigationdrawer(),
-          ),
+         
       bottomNavigationBar: footer1(),
       extendBodyBehindAppBar: true,
       extendBody: true,
@@ -284,42 +134,26 @@ class _SearchListState extends State<SearchList> {
   }
 
   List<Building> _buildList() {
-    return _list; //_list.map((contact) =>  Uiitem(contact)).toList();
+    return _list; 
   }
 
   List<Building> _buildSearchList() {
     if (_searchText.isEmpty) {
       return _searchList =
-          _list; //_list.map((contact) =>  Uiitem(contact)).toList();
+          _list; 
     } else {
-      /*for (int i = 0; i < _list.length; i++) {
-        String name = _list.elementAt(i);
-        if (name.toLowerCase().contains(_searchText.toLowerCase())) {
-          _searchList.add(name);
-        }
-      }*/
-
+     
       _searchList = _list
           .where((element) =>
               element.name.toLowerCase().contains(_searchText.toLowerCase()) ||
               element.place.toLowerCase().contains(_searchText.toLowerCase()))
           .toList();
       print('${_searchList.length}');
-      return _searchList; //_searchList.map((contact) =>  Uiitem(contact)).toList();
+      return _searchList; 
     }
   }
 
-//  Widget buildFooter(BuildContext context) {
-//    return BottomAppBar(
-//      child: Center(
-//        child: Text(
-//          "S H E R A",
-//          style: TextStyle(color: Color(0xffd11b5d)),
-//        ),
-//      ),
-//      color: Colors.black12,
-//    );
-//  }
+
 
   Widget buildBar(BuildContext context) {
     return AppBar(
@@ -376,7 +210,7 @@ class _SearchListState extends State<SearchList> {
         color: Color(0xffd11b5d),
       );
       this.appBarTitle = Text(
-        "Categories",
+        "Cats",
         style: TextStyle(color: Colors.white),
       );
       _IsSearching = false;
@@ -384,6 +218,18 @@ class _SearchListState extends State<SearchList> {
     });
   }
 }
+      
+       Widget buildFooter(BuildContext context) {
+   return BottomAppBar(
+     child: Center(
+       child: Text(
+         "Shimano",
+         style: TextStyle(color: Color(0xffd11b5d)),
+       ),
+     ),
+     color: Colors.black12,
+   );
+ }
 
 class Uiitem extends StatelessWidget {
   final Building building;
