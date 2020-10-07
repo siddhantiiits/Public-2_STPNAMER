@@ -6,9 +6,7 @@ import 'package:device_apps/device_apps.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 _launchURL(String packageName) async {
-  var url = 'https://play.google.com/store/apps/details?id=' +
-      packageName +
-      '&hl=en_IN';
+  
   if (await canLaunch(url)) {
     await launch(url);
   } else {
@@ -30,14 +28,12 @@ Future<bool> isAppInstalled(String packageName) async {
 Widget footer1() {
   return BottomAppBar(
     child: Text(
-      "S   H   E   R   A",
+      "Shimano",
       textAlign: TextAlign.center,
       style: TextStyle(color: Colors.black, fontSize: 20),
     ),
     color: Colors.white.withOpacity(0.5),
   );
-//  Text("hiii");  BuildContext context
-}
 
 Widget appbar1(String title) {
   return AppBar(
