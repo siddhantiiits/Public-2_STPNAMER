@@ -9,6 +9,7 @@ _launchURL(String packageName) async {
   
   if (await canLaunch(url)) {
     await launch(url);
+  print("hello");
   } else {
     throw 'Could not launch $url';
   }
